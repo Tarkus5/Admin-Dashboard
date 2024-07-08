@@ -1,10 +1,8 @@
-import React from 'react'
 import {CompanyList} from "@/pages";
 import {Form, Input, Modal, Select} from "antd";
 import {useModalForm, useSelect} from "@refinedev/antd";
 import {useGo} from "@refinedev/core";
 import {CREATE_COMPANY_MUTATION} from "@/graphql/mutations";
-import FormItem from 'antd/es/form/FormItem';
 import { USERS_SELECT_QUERY } from '@/graphql/queries';
 import SelectOptionWithAvatar from '@/components/select-option-with-avatar';
 import { GetFieldsFromList } from '@refinedev/nestjs-query';
@@ -57,7 +55,7 @@ const Create = () => {
                     >
                         <Input placeholder='Please enter a company name' />
                     </Form.Item>
-                    <FormItem
+                    <Form.Item
                         label='Sales owner'
                         name='salesOwnerId'
                         rules={[{ required: true }]}
@@ -77,7 +75,7 @@ const Create = () => {
                                 })) ?? []
                             }
                         />
-                    </FormItem>
+                    </Form.Item>
                 </Form>
             </Modal>
         </CompanyList>
